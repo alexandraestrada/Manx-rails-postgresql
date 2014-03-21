@@ -1,31 +1,31 @@
 class UsersController < ApplicationController
 
-  # def index
-  #   @users = User.all
-  # end
+  def index
+    @users = User.all
+  end
 
-  # def new
-  #   @user = User.new
-  # end
+  def new
+    @user = User.new
+  end
 
 
-  # def create
-  #   @user = User.new(user_params)
-  #   if @user.save
-  #       session[:user_id] = @user.id
-  #       redirect_to root_path
-  #   else
-  #     flash[:notice] = "that's already taken!"
-  #     render new_user_path
-  #   end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+        session[:user_id] = @user.id
+        redirect_to root_path
+    else
+      flash[:notice] = "that's already taken!"
+      render new_user_path
+    end
 
-  # end
+  end
 
-  # private
+  private
 
-  # def user_params 
-  #   params.require(:user).permit(:username, :email, :password, :phone_number)
-  # end
+  def user_params 
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
 
 
 end

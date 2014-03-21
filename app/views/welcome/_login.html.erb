@@ -1,0 +1,12 @@
+<% if !current_user %>
+<h1>Log In</h1>
+ <%= form_for :user, {url: "/auths", method: "post"} do |u| %>
+        <%= u.label :email %> </br>
+        <%= u.text_field :email %><br />
+        <%= u.label :password %> </br>
+        <%= u.password_field :password %><br /><br />
+        <%= u.submit "Log in" %>
+  <%end%>
+  <%end%>
+
+  <h4>New User? <%= link_to 'Sign Up',new_user_path %></h4>

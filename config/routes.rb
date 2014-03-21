@@ -8,12 +8,12 @@ MegRails::Application.routes.draw do
   resources :shopping_carts
   resources :users
   resources :shopping_cart_items
-
+  resources :auths
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
