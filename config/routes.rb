@@ -1,14 +1,15 @@
 MegRails::Application.routes.draw do
 
-  get "auths/new"
-  get "auths/create"
-  get "auths/destroy"
-  get "items/index"
+  # get "auths/new"
+  # get "auths/create"
+  # get "auths/destroy"
+  # get "items/index"
   resources :items
   resources :shopping_carts
   resources :users
   resources :shopping_cart_items
   resources :auths
+  delete "auths" => "auths#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
