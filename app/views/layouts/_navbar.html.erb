@@ -7,11 +7,19 @@
  		<%= link_to 'Sign Out', auths_path, method: :delete, class: "navbar-link" %>
 	</p>
  	<p class="navbar-text navbar-right">
-  		<%= current_user ? "Hello "+ current_user.first_name.capitalize + "!": "" %>
+
+  	<%= current_user ? "Hello "+ current_user.first_name.capitalize + "!": "" %><br />
+
+        <p class="navbar-text navbar-right sc-glyphicon">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+      
+          
+          
+
  	</p>
-			
+	<%else %>		
 				
- <%else %>
+
 		
 
  	

@@ -23,7 +23,12 @@
 		<dd><%= @item.price %></dd><br />
 
 	
-		
+		<%=form_for @shopping_cart_item, {url: shopping_cart_items_path} do |f| %>
+			<%=f.hidden_field :item_id, value: @shopping_cart_item.item_id %>
+			<%#=f.hidden_field :item_id, value: @shopping_cart_item.shopping_cart_id %>
+			<%=f.submit "Add Item to Shopping Cart" %>
+
+		<%end%>
 
   </div>
 </div>

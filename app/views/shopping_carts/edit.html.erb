@@ -1,0 +1,3 @@
+<% @shopping_cart_items.each do |sci| %>
+  <%=sci.item.name %><%=button_to"Delete Item",sci, method: :delete %> 
+<%end%>

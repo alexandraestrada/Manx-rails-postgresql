@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
 
   def show
   	@item = Item.find(params[:id])
+    @shopping_cart_item = ShoppingCartItem.new(item: @item, shopping_cart: ShoppingCart.last)
+
   end
 
   private
