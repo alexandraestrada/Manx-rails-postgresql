@@ -1,11 +1,22 @@
 <h1>Shop Meggings</h1>
-<div>
-<% @items.each do |item| %>
 
-	<%=link_to image_tag(item.photo_url, size: '200x300'), item %>
-	<p class= 'description'>
-	Name: <%= item.name%><br />
-	Color: <%= item.color %><br />
-	Price: <%= item.price %>
-<%end%>
+<div class="container item-container">
+	<div class-"row">	
+		<% @items.each do |item| %>
+	  		<div class="col-md-3 col-s-6 col-xs-12 item-box"> 
+	  			
+				<%=link_to image_tag(item.photo_url, size: '200x300'), item %>
+				<p class= 'description'>
+				Name: <%= item.name%><br />
+				Color: <%= item.color %><br />
+				Price: <%= item.price %>
+
+			
+			</div> 
+		<%end%> 
+		
+		<%#=button_to "Add Item to cart",add_item_path(@item), method: :post %>
+	</div> 
+  
+
 </div>

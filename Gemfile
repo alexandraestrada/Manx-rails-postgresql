@@ -14,6 +14,8 @@ group :development, :test do
      gem 'rspec-rails'
 end
 
+gem "jquery-rails"
+
 gem 'bcrypt'
 
 gem 'bootstrap-sass', '~> 3.1.0'

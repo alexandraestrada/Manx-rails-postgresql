@@ -1,0 +1,32 @@
+<div class="back-button">
+<%= link_to 'Back', action: 'index', :class => "back-button" %>
+</div>
+
+<!--%=#button_to'Delete Megging', megging_path(@megging), {method: :delete} %-->
+<div class = "container">
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+	<dd><%= image_tag @item.photo_url, size: '400x500' %></dd>
+  </div>
+  <div class="col-xs-6 col-md-4">
+	<dt>Name</dt>
+		<dd><%= @item.name %></dd>
+
+	<dt>Color</dt>
+		<dd><%= @item.color %></dd>
+
+	<dt>Size</dt>
+		<dd><%= @item.size %></dd>
+
+
+	<dt> Price</dt>
+		<dd><%= @item.price %></dd><br />
+
+	
+		
+
+  </div>
+</div>
+
+
+</div>

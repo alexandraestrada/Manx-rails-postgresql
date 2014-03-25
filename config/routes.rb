@@ -4,6 +4,7 @@ MegRails::Application.routes.draw do
   # get "auths/create"
   # get "auths/destroy"
   # get "items/index"
+  # post "shopping_cart/add/:item_id" => 'shopping_carts#add', as: :add_item 
   resources :items
   resources :shopping_carts
   resources :users
