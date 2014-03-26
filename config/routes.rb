@@ -7,6 +7,7 @@ MegRails::Application.routes.draw do
   # post "shopping_cart/add/:item_id" => 'shopping_carts#add', as: :add_item 
   resources :items
   # post 'shopping_cart_items/:item_id' => 'shopping_cart_items#create', as: :shopping_cart_item_by_item
+  # get "shopping_carts/:id/edit" => 'shopping_cart#edit', as: :edit_shopping_cart
   resources :shopping_carts
   resources :users
   resources :shopping_cart_items

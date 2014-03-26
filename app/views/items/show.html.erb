@@ -26,7 +26,16 @@
 		<%=form_for @shopping_cart_item, {url: shopping_cart_items_path} do |f| %>
 			<%=f.hidden_field :item_id, value: @shopping_cart_item.item_id %>
 			<%#=f.hidden_field :item_id, value: @shopping_cart_item.shopping_cart_id %>
-			<%=f.submit "Add Item to Shopping Cart" %>
+      <h4>
+      XS <%=f.radio_button :size, "XS" %> S <%=f.radio_button :size, "S" %>  M <%=f.radio_button :size, "M" %> L <%=f.radio_button :size, "L" %> XL <%=f.radio_button :size, "XL" %></h4>
+       <div class="col-xs-3">
+      <%=f.label :Quantity %>
+      <%=f.text_field :quantity %><br />
+  </div>
+    <div>
+			<p><%=f.submit "Add Item to Shopping Cart" %></div>
+
+    
 
 		<%end%>
 

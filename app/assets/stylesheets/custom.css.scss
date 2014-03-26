@@ -13,3 +13,47 @@
 // 	height: 200px;
 // 	// background-image: url("banner1.jpg");
 // }
+
+// -------------------------------------items index--------------------------------------
+
+.item-box {
+  text-align: center;
+}
+.items {
+  text-align: center;
+}
+.image-box {
+  z-index: 10;
+  width: 200px;
+  height: 300px;
+  margin: 0 auto;
+
+}
+
+
+.image-box:hover {
+  opacity: .3;  
+
+}
+
+  // border: 1px solid black;
+  // #image-box-span{
+  //   text-align: center;
+  //   opacity: 0;
+  //   position: relative;
+  //   top: 124px;
+  //   left: 64px;
+  // }
+
+// ----------------------------------------Shopping_Cart_Items Edit -----------------------
+.sc-items-details {
+  margin-left: 30px;
+}
+
+
+.sc-items-list {
+  border: 1px solid black;
+}
+.deleteButton {
+  margin-left: 30px;
+}

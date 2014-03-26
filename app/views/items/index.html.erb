@@ -4,14 +4,15 @@
 	<div class-"row">	
 		<% @items.each do |item| %>
 	  		<div class="col-md-3 col-s-6 col-xs-12 item-box"> 
-	  			
-				<%=link_to image_tag(item.photo_url, size: '200x300'), item %>
-				<p class= 'description'>
-				Name: <%= item.name%><br />
-				Color: <%= item.color %><br />
-				Price: <%= item.price %>
-		
-			</div> 
+	  			<div class="image-box">		
+						<%=link_to image_tag(item.photo_url, size: '200x300'), item %>
+					</div>
+					<p class= 'items description'>
+						Name: <%= item.name%><br />
+						<!-- Color: <%#= item.color %><br /> -->
+						Price:<%= item.price %></p>
+						<span id="image-box-span"><%= link_to "View Details", item, :id => "view-details" %></span><br /> <br /><br />
+					</div> 
 
 		<%end%> 
 		

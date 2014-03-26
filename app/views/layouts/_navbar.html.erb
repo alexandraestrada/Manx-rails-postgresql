@@ -12,12 +12,19 @@
 
         <p class="navbar-text navbar-right sc-glyphicon">
         <span class="glyphicon glyphicon-shopping-cart"></span>
-      
           
+          <% sc = ShoppingCart.find(session[:shopping_cart_id]) %>
+
+          <%=link_to sc.shopping_cart_items.count.to_s + " item(s)", edit_shopping_cart_path(sc) %>
+          
+        </p>
+      <%#= "Welcome " + current_user.username + "!" %><br />
+
+ 
           
 
  	</p>
-	<%else %>		
+<%else %>		
 				
 
 		
