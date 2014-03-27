@@ -17,15 +17,11 @@ class ShoppingCartItemsController < ApplicationController
   end 
 
   def destroy 
-
    item = ShoppingCartItem.find(params[:id])
    sc = item.shopping_cart
    item.destroy
    redirect_to edit_shopping_cart_path(sc) 
   end
-
-  
-
 
   private
 
@@ -34,19 +30,16 @@ class ShoppingCartItemsController < ApplicationController
   end
 
   def create_shopping_cart_if_missing
-    unless session[:shopping_cart_id]
-      session[:shopping_cart_id] = ShoppingCart.create(user: current_user).id
-
-    # unless params[:shopping_cart_item][:shopping_cart_id].present?
-    #   params[:shopping_cart_item][:shopping_cart_id] = 
-    end
+    # unless session[:shopping_cart_id]
+    #   session[:shopping_cart_id] = ShoppingCart.create(user: current_user).id
+    # end
   end
 
   def verify_shopping_cart_ownership
-    sc_id = session[:shopping_cart_id]
-    if sc_id.present?
-      shopping_cart = ShoppingCart.find_by(id: sc_id, user_id: current_user.id)
-      render(status: :unauthorized, nothing: true) unless shopping_cart.present?
-    end
+    # sc_id = session[:shopping_cart_id]
+    # if sc_id.present?
+    #   shopping_cart = ShoppingCart.find_by(id: sc_id, user_id: current_user.id)
+    #   render(status: :unauthorized, nothing: true) unless shopping_cart.present?
+    # end
   end
 end

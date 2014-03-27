@@ -5,7 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-	
+ShoppingCartItem.destroy_all
+Item.destroy_all
+ShoppingCart.destroy_all
+User.destroy_all
+User.create(first_name: 'Alex', last_name: 'SuperStar', email: 'alex@example.com', password: 'password')
 items = Item.create([
 	{
 		name: 'The Megging', 

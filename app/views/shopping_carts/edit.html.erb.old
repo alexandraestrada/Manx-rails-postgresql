@@ -1,0 +1,8 @@
+<% @shopping_cart_items.each do |sci| %>
+  <div class="container fluid">
+    <div class="col-md-4 col-s-4"> 
+      <div class= "sc-items-list">
+       <%= sci.item.name %> 
+       <%#= sci.item.name %> 
+     </div></div></div>
+       <% end %>

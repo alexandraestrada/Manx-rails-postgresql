@@ -13,6 +13,7 @@ class AuthsController < ApplicationController
 		user = User.find_by(email: params[:user][:email])
 		if user && user.authenticated?(params[:user][:password])
 			session[:user_id] = user.id
+      @shopping_cart.update user_id: user.id
 			redirect_to root_path
 		else
 			flash[:error] = "Incorrect email or password."

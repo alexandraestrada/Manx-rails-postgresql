@@ -1,22 +1,22 @@
 <div class= "navbar">
-<h1 class="navbar-text navbar-left">Manx</h1>
+<h1 class="navbar-text navbar-left logo"><%= link_to "Manx", root_path, :class => "logo" %><br /></h1>
 
 
-<%if current_user %>
+
 	<p class="navbar-text navbar-right"> 
- 		<%= link_to 'Sign Out', auths_path, method: :delete, class: "navbar-link" %>
+    <% if current_user %>
+   		<%= link_to 'Sign Out', auths_path, method: :delete, class: "navbar-link" %>
+    <% end %>
 	</p>
  	<p class="navbar-text navbar-right">
 
-  	<%= current_user ? "Hello "+ current_user.first_name.capitalize + "!": "" %><br />
+    <%= current_user ? "Hello #{current_user.first_name.try(:capitalize)}!": "" %><br />
+
 
         <p class="navbar-text navbar-right sc-glyphicon">
         <span class="glyphicon glyphicon-shopping-cart"></span>
           
-          <% sc = ShoppingCart.find(session[:shopping_cart_id]) %>
-
-          <%=link_to sc.shopping_cart_items.count.to_s + " item(s)", edit_shopping_cart_path(sc) %>
-          
+            <%=link_to @shopping_cart.shopping_cart_items.count.to_s + " item(s)", edit_shopping_cart_path(@shopping_cart) %>
         </p>
       <%#= "Welcome " + current_user.username + "!" %><br />
 
@@ -24,15 +24,10 @@
           
 
  	</p>
-<%else %>		
-				
-
-		
-
- 	
- 	
- <%end%>
+<% unless current_user %>				
+  <p class="navbar-text navbar-right"> <%= link_to 'Sign in  | Sign Up',"#", class: "navbar-link", 'data-toggle' =>"modal", 'data-target'=>"#signin" %></p>
+<% end %>
 
 
 </div>
-
+<%= render partial: "welcome/signin" %>
