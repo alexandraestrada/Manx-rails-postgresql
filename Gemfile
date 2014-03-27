@@ -14,6 +14,8 @@ group :development, :test do
      gem 'rspec-rails'
 end
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem "jquery-rails"
 
 gem 'bcrypt'

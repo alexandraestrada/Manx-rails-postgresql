@@ -3,17 +3,36 @@
     <div class="col-md-4 col-s-4"> 
       <div class= "sc-items-list">
        <%=link_to image_tag(sci.item.photo_url, size: '200x300'), sci.item %></span><br />
-       <p class="sc-items-details">      
-        Name: <%= sci.item.name%><br />
-        Color: <%= sci.item.color %><br />
-        Price: <%= sci.item.price %><br />
-        Size: <%=sci.size %> <br />
-        Quantity: <%=sci.quantity %> <br />
-        <%=button_to"Delete Item",sci, method: :delete, class: :deleteButton %> 
+        <p class="sc-items-details">      
+          Name: <%= sci.item.name%><br />
+          Color: <%= sci.item.color %><br />
+          Price: <%= sci.item.price %><br />
+          Size: <%= sci.size %><br />
+          Quantity: <%= sci.quantity %>
 
-       </p>   
+          <%= form_for sci do |f| %>
+
+            <%= f.label :Quantity %>
+            <%= f.text_field :quantity %><br />
+            XS <%=f.radio_button :size, "XS" %> S <%=f.radio_button :size, "S" %>  M <%=f.radio_button :size, "M" %> L <%=f.radio_button :size, "L" %> XL <%=f.radio_button :size, "XL" %>
+            <%=f.submit "update" %>
+          <%end%>
+        </p>
       </div>
     </div>
   </div>
-  
+  <%=button_to"Delete Item",sci, method: :delete, class: :deleteButton %> 
 <%end%>
+
+        <!-- Size: <%#=sci.size %> <br />
+
+        Quantity: <%#=sci.quantity %> <br />
+        <h4> -->
+
+
+
+       </p>   
+      
+ 
+  
+

@@ -9,6 +9,13 @@ class ShoppingCartItemsController < ApplicationController
     end
   end
 
+  def update
+    item = ShoppingCartItem.find(params[:id])
+    sc = item.shopping_cart
+    item.update(shopping_cart_item_params)
+    redirect_to edit_shopping_cart_path(sc)
+  end 
+
   def destroy 
 
    item = ShoppingCartItem.find(params[:id])
@@ -16,6 +23,8 @@ class ShoppingCartItemsController < ApplicationController
    item.destroy
    redirect_to edit_shopping_cart_path(sc) 
   end
+
+  
 
 
   private
