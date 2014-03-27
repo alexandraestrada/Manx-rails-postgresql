@@ -81,14 +81,26 @@ body {
   // }
 
 // ----------------------------------------Shopping_Cart_Items Edit -----------------------
+
+.sc-titles {
+  border-top: 3px solid grey;
+  border-bottom: 3px solid grey;
+}
 .sc-items-details {
   margin-left: 30px;
 }
 
+.deleteButton {
+  text-align: center;
+}
 
 .sc-items-list {
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 .deleteButton {
   margin-left: 30px;
+}
+#item-header {
+  text-align: center;
+  margin-right: 50px;
 }

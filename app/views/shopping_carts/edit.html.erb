@@ -1,37 +1,55 @@
-<% @shopping_cart_items.each do |sci| %>
-  <div class="container fluid">
-    <div class="col-md-4 col-s-4"> 
-      <div class= "sc-items-list">
-       <%=link_to image_tag(sci.item.photo_url, size: '200x300'), sci.item %></span><br />
-        <p class="sc-items-details">      
-          Name: <%= sci.item.name%><br />
-          Color: <%= sci.item.color %><br />
-          Price: <%= sci.item.price %><br />
-          Size: <%= sci.size %><br />
-          Quantity: <%= sci.quantity %>
+<div class="container">
+  <div class="row sc-titles">
+    <div class="col-md-1">
 
-          <%= form_for sci do |f| %>
+    </div>
+    <div class= "col-md-5"> 
+      <h3 id="item-header">Item</h3>
+    </div>
+    <div class= "col-md-2"> 
+      <h3>Quantity</h3>
+    </div>
+    <div class= "col-md-2">
+      <h3>Unit Price</h3>
+    </div>
+    <div class= "col-md-2"> 
+      <h3>Total</h3>
 
-            <%= f.label :Quantity %>
-            <%= f.text_field :quantity %><br />
-            XS <%=f.radio_button :size, "XS" %> S <%=f.radio_button :size, "S" %>  M <%=f.radio_button :size, "M" %> L <%=f.radio_button :size, "L" %> XL <%=f.radio_button :size, "XL" %>
-            <%=f.submit "update" %>
-          <%end%>
-        </p>
-      </div>
     </div>
   </div>
-  <%=button_to"Delete Item",sci, method: :delete, class: :deleteButton %> 
-<%end%>
 
-        <!-- Size: <%#=sci.size %> <br />
-
-        Quantity: <%#=sci.quantity %> <br />
-        <h4> -->
+</div>
 
 
+  <div class="container">
+    <% @shopping_cart_items.each do |sci| %>
+    <div class="row">
+      
+      <div class="col-md-1">
+        <%=link_to"X",sci, method: :delete, class: :deleteButton %>
+      </div>
+      <div class="col-md-5">
+        <%=link_to image_tag(sci.item.photo_url, size: '150x250'), sci.item %></span>
+        Name: <%= sci.item.name %>
+      </div>
+      <div class="col-md-2">
+        <%=form_for sci do |f| %>
+          <%=f.label :Quantity %><br />
+          <%=f.text_field :quantity %>
+          <%=f.submit "update" %>
+        <% end %>
+      </div>
+      <div class="col-md-2">
+        <%= sci.item.price %>
+      </div>
+      <div class="col-md-2">
+         
+      </div>
+      
+    </div>
+    <% end %>
+  </div>
 
-       </p>   
       
  
   

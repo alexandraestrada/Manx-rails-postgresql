@@ -6,28 +6,22 @@
 	<p class="navbar-text navbar-right"> 
     <% if current_user %>
    		<%= link_to 'Sign Out', auths_path, method: :delete, class: "navbar-link" %>
+
+	   </p>
+ 	    <p class="navbar-text navbar-right">
+
+      <%= current_user ? "Hello #{current_user.first_name.try(:capitalize)}!": "" %><br />
+        
+      <%#= "Welcome " + current_user.username + "!" %>
+    </p>
+    <% else  %>				
+      <p class="navbar-text navbar-right"> <%= link_to 'Sign in  | Sign Up',"#", class: "navbar-link", 'data-toggle' =>"modal", 'data-target'=>"#signin" %></p>
     <% end %>
-	</p>
- 	<p class="navbar-text navbar-right">
-
-    <%= current_user ? "Hello #{current_user.first_name.try(:capitalize)}!": "" %><br />
-
-
-        <p class="navbar-text navbar-right sc-glyphicon">
+  <p class="navbar-text navbar-right sc-glyphicon">
         <span class="glyphicon glyphicon-shopping-cart"></span>
           
             <%=link_to @shopping_cart.shopping_cart_items.count.to_s + " item(s)", edit_shopping_cart_path(@shopping_cart) %>
         </p>
-      <%#= "Welcome " + current_user.username + "!" %><br />
-
- 
-          
-
- 	</p>
-<% unless current_user %>				
-  <p class="navbar-text navbar-right"> <%= link_to 'Sign in  | Sign Up',"#", class: "navbar-link", 'data-toggle' =>"modal", 'data-target'=>"#signin" %></p>
-<% end %>
-
 
 </div>
 <%= render partial: "welcome/signin" %>
