@@ -22,19 +22,29 @@
 
 }
 
+// -------------------------------------Sign In Modal ---------------------------------
+
+.sign-in-modal {
+  text-align: center;
+}
+
 // ----------------------------------welcome index ---------------------------------
 
 body {
   background-color: #dbdbdb;
 }
 
-#homepage-slider {
+.carousel-inner > .item > img {
+  width: 100%;
+}
+
+#carousel-example {
   margin-top: -18px;
   .caption1 {
     margin-left: -260px;
     margin-bottom: -20px;
     float: left;
-    width: 1250px;
+    width: 100%;
     height: 150px;
     background-color: rgba(20,20,20,.5);
     .c1 {
