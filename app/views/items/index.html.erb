@@ -1,4 +1,4 @@
-<h1 id="items-title">Summer 2014</h1>
+<h1 id="items-title">SUMMER 2014</h1>
 
 <div class="container item-container">
 	<div class-"row">	
@@ -9,9 +9,9 @@
 					</div>
 					<p class= 'items description'>
 						<p id="item-name"><%= item.name %></p>
-						<p id="item-price"><strong><%= item.price %></strong></p>
+						<p id="item-price"><strong><%= item.price %></strong><br />
 						<!-- <span id="image-box-span"><%#= link_to "View Details", item, :id => "view-details" %></span><br /> <br /><br /> -->
-						<span id="image-box-span"><%= link_to "View Details", '#', { 'data-toggle' =>"modal", 'data-target'=>"#details" } %></span><br /> <br /><br />
+						<span id="image-box-span"><%= link_to "Quick Look", '#', { 'data-toggle' =>"modal", 'data-target'=>"#details" } %></p></span><br /> <br /><br />
 					</div> 
 
 						<%= render partial: 'items/details', locals: {item: item, shopping_cart_item: @shopping_cart_item} %>

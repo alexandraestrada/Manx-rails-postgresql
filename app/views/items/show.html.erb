@@ -1,46 +1,41 @@
-<div class="back-button">
-<%= link_to 'Back', action: 'index', :class => "back-button" %>
-</div>
+
+
 
 <!--%=#button_to'Delete Megging', megging_path(@megging), {method: :delete} %-->
-<div class = "container">
-<div class="row">
-  <div class="col-xs-12 col-md-6">
-	<dd><%= image_tag @item.photo_url, size: '400x500' %></dd>
-  </div>
-  <div class="col-xs-6 col-md-4">
-	<dt>Name</dt>
-		<dd><%= @item.name %></dd>
+<div class = "container item-show-container">
+  <div class="row"><br /><br />
+    <div class="back-button">
+      <h4 id="back-button"><%= link_to 'Back', action: 'index', :class => "back-button" %></h4>
+    </div>
 
-	<dt>Color</dt>
-		<dd><%= @item.color %></dd>
-
-	<dt>Size</dt>
-		<dd><%= @item.size %></dd>
-
-
-	<dt> Price</dt>
-		<dd><%= @item.price %></dd><br />
-
-	
-		<%=form_for @shopping_cart_item, {url: shopping_cart_items_path} do |f| %>
-			<%=f.hidden_field :item_id, value: @shopping_cart_item.item_id %>
-			<%#=f.hidden_field :item_id, value: @shopping_cart_item.shopping_cart_id %>
-      <h4>
-      XS <%=f.radio_button :size, "XS" %> S <%=f.radio_button :size, "S" %>  M <%=f.radio_button :size, "M" %> L <%=f.radio_button :size, "L" %> XL <%=f.radio_button :size, "XL" %></h4>
-       <div class="col-xs-3">
-      <%=f.label :Quantity %>
-      <%=f.text_field :quantity %><br />
-  </div>
-    <div>
-			<p><%=f.submit "Add Item to Shopping Cart" %></div>
-
-    
-
+    <div class="col-md-5">
+	     <dd><%= image_tag @item.photo_url, size: '400x500', :id =>"show-image" %></dd>
+    </div>
+    <div class="col-md-7 show-details">
+		    <h2 class= "show-name"><dd><%= @item.name %></dd></h2>
+        <p class="show-line"> _____________________________________________________________________________</p>
+    		<h4 id="show-color"><span id="color">Color:</span></h4><h3 class="price-color"><%= @item.color %></h3>
+        <p class="show-line"> ____________________________________________</p>
+        <h4 id="show-price"><span id="price">Price:</span></h4> <h3 class="price-color"><%= @item.price %></h3>
+        <p class="show-line"> ____________________________________________</p>
+        <%=form_for @shopping_cart_item, {url: shopping_cart_items_path} do |f| %>
+			  <%=f.hidden_field :item_id, value: @shopping_cart_item.item_id %>
+        <div class="sizes">
+          <h3 id="show-size">Select Size: <span id="size-buttons" 
+            XS <%=f.radio_button :size, "XS" %> S <%=f.radio_button :size, "S" %> 
+            M <%=f.radio_button :size, "M" %> 
+            L <%=f.radio_button :size, "L" %> 
+            XL <%=f.radio_button :size, "XL" %></span></h3><p class="show-line"> _____________________________________________________________________________</p>
+        </div>
+        <h3 id="show-quantity">
+        <%=f.label :Quantity %>:
+        <%=f.text_field :quantity, :id=>"qty-field" %>
+        <span id="sc-submit"><%=f.submit "Add to Shopping Cart", :class =>"btn btn-lg btn-dec" %></span></h3>
+      </p>
+    </div>
 		<%end%>
-
-  </div>
+ </div>
 </div>
 
 
-</div>
+

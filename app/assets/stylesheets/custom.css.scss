@@ -1,6 +1,9 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700);
 @import url(http://fonts.googleapis.com/css?family=Gilda+Display);
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,600);
+@import url(http://fonts.googleapis.com/css?family=Raleway+Dots);
+
 
 // ------------------------------ nav index -----------------------------------
 
@@ -30,7 +33,7 @@
   .shop {
     margin-top: 3px;
     color: white;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Raleway Dots', cursive;
 
   }
 }
@@ -90,12 +93,14 @@ body {
   }
 
 }
-// 
+ 
 
 // -------------------------------------items index--------------------------------------
 
 #items-title {
   color: #8f8f8f;
+  font-family: 'Dosis', sans-serif;
+  text-indent: 25px;
 }
 .item-box {
   text-align: center;
@@ -119,7 +124,7 @@ body {
 
 .item-container {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .item-name {
@@ -128,6 +133,67 @@ body {
 .item-price {
   font-size: 40px;
 
+}
+
+// -------------------------------------items Show--------------------------------------
+
+.item-show-container {
+  // background-color: rgba(125,125,125,.3);
+  border-radius: 30px;
+  height: 700px;
+.back-button {
+  text-align: left;
+}
+#back-button {
+  text-indent: 20px;
+}
+  
+}
+.show-details {
+  border: 1px solid black;
+  border-radius: 30px;
+  height: 450px;
+  width: 600px;
+  background-color: rgba(135,135,135,.3);
+}
+.show-name {
+  color: #25b5c6;
+  z-index: 10;
+}
+.show-line {
+  color:white;
+}
+
+#show-image {
+  border-radius: 20px;
+}
+#color, #price {
+  font: 20px;
+  color: #c21b6f;
+  text-indent: 5px;
+}
+#show-color, #show-price, .price-color {
+  color: #c5c5c5;
+  
+}
+#show-size, #show-quantity {
+  color: #c21b6f;
+}
+#size-buttons {
+  font-size: 20px;
+  text-indent: 25px;
+  color: #25b5c6;
+
+}
+#qty-field {
+  width: 50px;
+}
+.btn-dec {
+  background-color: red;
+  color: white;
+  margin-left: 130px;
+  margin-top: -15px;
+  height: 60px;   
 }
 
 // ----------------------------------------Shopping_Cart_Items Edit -----------------------
