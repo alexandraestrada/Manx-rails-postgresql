@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   
   def index
   	@items = Item.all
+    @shopping_cart_item = ShoppingCartItem.new(item: @item, shopping_cart: ShoppingCart.last)
+
   end
 
   def show

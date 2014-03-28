@@ -1,4 +1,4 @@
-
+<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -6,16 +6,8 @@
         <h4 class="modal-title" id="myModalLabel">Manx</h4>
       </div>
       <div class="modal-body">
-        <div class="back-button">
-<%= link_to 'Back', action: 'index', :class => "back-button" %>
-</div>
-
-<div class = "container">
-<div class="row">
-  <div class="col-xs-12 col-md-6">
+      
   <dd><%= image_tag item.photo_url, size: '400x500' %></dd>
-  </div>
-  <div class="col-xs-6 col-md-4">
   <dt>Name</dt>
     <dd><%= item.name %></dd>
 
@@ -28,9 +20,10 @@
 
   <dt> Price</dt>
     <dd><%= item.price %></dd><br />
-  
-    <%=form_for ShoppingCartItem.new, {url: shopping_cart_items_path} do |f| %>
-      <%#=f.hidden_field :item_id, value: shopping_cart_item.item_id %>
+
+
+      <%=form_for @shopping_cart_item, {url: shopping_cart_items_path} do |f| %>
+      <%=f.hidden_field :item_id, value: @shopping_cart_item.item_id %>
       <%#=f.hidden_field :item_id, value: @shopping_cart_item.shopping_cart_id %>
       <h4>
       XS <%=f.radio_button :size, "XS" %> S <%=f.radio_button :size, "S" %>  M <%=f.radio_button :size, "M" %> L <%=f.radio_button :size, "L" %> XL <%=f.radio_button :size, "XL" %></h4>
@@ -44,13 +37,13 @@
     
 
     <%end%>
+        <div class="back-button"><%= link_to 'Back', action: 'index', :class => "back-button" %></div>
 
-  </div>
-</div>
-      </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
+ </div>
+</div>

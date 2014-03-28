@@ -1,8 +1,13 @@
-<h1>New User Form</h1>
-<%= form_for @user do |f| %>
-<%= f.text_field :first_name, "placeholder"=>"first name" %><br />
-<%= f.text_field :last_name, "placeholder"=>"last name" %><br />
-<%= f.text_field :email, "placeholder"=>"email"  %><br />
-<%= f.password_field :password, "placeholder"=>"password"  %><br />
-<%= f.submit %>
-<% end %>
+
+<div class = "sign-up">
+  <div>
+    <h1 id="title">Sign Up</h1>
+    <%= form_for @user, :html => {:class => "sign-up-form"} do |f| %>
+    <%= f.text_field :first_name, "placeholder"=>"first name" %><br /><br />
+    <%= f.text_field :last_name, "placeholder"=>"last name" %><br /><br />
+    <%= f.text_field :email, "placeholder"=>"email"  %><br /><br />
+    <%= f.password_field :password, "placeholder"=>"password"  %><br /><br />
+    <%= f.submit "Sign Up" %>
+    <% end %>
+  </div>
+</div>
