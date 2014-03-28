@@ -16,7 +16,6 @@ end
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-gem "jquery-rails"
 
 gem 'bcrypt'
 
